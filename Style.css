@@ -1,0 +1,80 @@
+:root{
+  --bg:#f7f8fc;
+  --ink:#1e1e2a;
+  --muted:#6b7280;
+  --brand:#1f6feb;
+  --card:#ffffff;
+  --focus:#ffbf47;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.5;
+}
+/* focus visibility for keyboard users */
+a{ color:var(--brand); text-decoration:none; }
+a:focus, button:focus, input:focus, select:focus, textarea:focus{
+  outline:3px solid var(--focus);
+  outline-offset:2px;
+}
+.wrapper{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas:
+    "header header header"
+    "nav main aside"
+    "footer footer footer";
+  gap:16px;
+  padding:16px;
+}
+header, nav, main, aside, footer{
+  background:var(--card);
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 6px 18px rgba(10,12,16,.05);
+}
+header{ grid-area:header; }
+nav{ grid-area:nav; }
+main{ grid-area:main; }
+aside{ grid-area:aside; }
+footer{ grid-area:footer; }
+header h1{ margin:0 0 8px 0; }
+.subtitle{ color:var(--muted); margin:0; }
+/* nav list: remove bullets */
+.navlist{ list-style:none; padding-left:0; margin:0; display:grid; gap:10px; }
+.navlist li a{
+  display:inline-block;
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid #e5e7eb;
+}
+.navlist li a:hover{ background:#f3f4f6; }
+/* content */
+.card-img{
+  width:100%;
+  max-width:640px;
+  border-radius:12px;
+  border:1px solid #e5e7eb;
+  display:block;
+}
+.logo-wrap{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.logo-wrap svg{ width:80px; height:80px; display:block; }
+.logo-title{ font-weight:700; }
+footer{ font-size:.95rem; color:var(--muted); }
+/* Responsive: stack on small screens */
+@media (max-width: 700px){
+  .wrapper{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+}

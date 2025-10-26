@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>ASN8 – Responsive & Accessible Design</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <header role="banner">
+      <h1>Assignment 8 – Responsive & Accessible Design</h1>
+      <p class="subtitle">From my understanding, this page shows my grid layout, links, SVG logo, and accessibility updates.</p>
+    </header>
+
+    <nav role="navigation" aria-label="Helpful links for this assignment">
+      <ul class="navlist">
+        <li><a href="https://columbusstate.edu" tabindex="1">CSU Website</a></li>
+        <li><a href="https://www.w3.org/WAI/standards-guidelines/" tabindex="2">Web Accessibility Standards (W3C WAI)</a></li>
+        <li><a href="https://responsivedesignchecker.com/" tabindex="3">Responsive Design Checker</a></li>
+      </ul>
+      <p class="subtitle">I added tabindex so I can tab through links in a logical order.</p>
+    </nav>
+
+    <main role="main">
+      <figure>
+        <img class="card-img" src="https://images.unsplash.com/photo-1520975922284-9e0ce827fd40?q=80&w=1200&auto=format&fit=crop" alt="A clean workspace with a laptop to show my responsive layout demo">
+        <figcaption class="subtitle">My main image with an <code>alt</code> description for accessibility.</figcaption>
+      </figure>
+      <p>From my understanding, my grid starts as: header • nav • main • aside • footer, and then stacks on phones using a media query.</p>
+      <p><a href="form.html">Go to my form page</a></p>
+    </main>
+
+    <aside aria-label="My SVG logo">
+      <div class="logo-wrap">
+        <!-- Accessible inline SVG logo -->
+        <svg role="img" aria-labelledby="logoTitle logoDesc" viewBox="0 0 128 128" focusable="false">
+          <title id="logoTitle">DH Logo</title>
+          <desc id="logoDesc">Rounded square with letters D and H for Deuel Hunte.</desc>
+          <rect x="4" y="4" width="120" height="120" rx="22" fill="#1f6feb"/>
+          <text x="50%" y="52%" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="52" fill="#ffffff">DH</text>
+        </svg>
+        <div>
+          <div class="logo-title">My SVG Logo</div>
+          <div class="subtitle">Includes <code>&lt;title&gt;</code> and <code>&lt;desc&gt;</code> for screen readers.</div>
+        </div>
+      </div>
+      <p class="subtitle">Optional logo from the assignment:</p>
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/44216/pixels-2.svg" alt="Pixels the cat as an optional SVG logo" width="120" height="120">
+    </aside>
+
+    <footer role="contentinfo">
+      <div>Deuel Hunte — Fall 2025</div>
+    </footer>
+  </div>
+</body>
+</html>
